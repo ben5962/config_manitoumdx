@@ -1,0 +1,2 @@
+manitou-mdx --conf="C:\Users\Utilisateur\Downloads\manitou-mdx-1.6.0.tar\manitou-mdx-1.6.0\etc\manitou-mdx.conf" --import-list=".\mails_a_importer.txt" --import-basedir="C:/Users/Utilisateur/Downloads/Tous-2017-07-01-085332/Inbox"
+pause
