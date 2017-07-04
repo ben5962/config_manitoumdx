@@ -23,8 +23,7 @@ Vagrant.configure("2") do |config|
   
 
 
-	config.vm.provision type :shell, :path => "bootstrap.sh"
-	
+	config.vm.provision :shell, :path => "bootstrap.sh"
 	#config.vm.provision :shell, inline: "moui moui"
 	#config.vm.provision "shell", inline: $script
 
