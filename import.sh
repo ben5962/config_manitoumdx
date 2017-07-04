@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-LISTE_MAILS = ~/liste-mails
-CONF = /etc/mails_plannings-mdx.conf
+LISTE_MAILS="~/liste-mails"
+CONF="/etc/mails_plannings-mdx.conf"
 git clone https://github.com/ben5962/mails_plannings.git
 cd mails_plannings
-find . -type f -name *.eml > $LISTE_MAILS
+find . -type f -name *.eml > "$LISTE_MAILS"
 sudo manitou-mgr --create-database --db-name=mails_plannings
-sudo cat < FIN >> $CONF
+sudo cat < FIN >> "$CONF"
 [common]
 db_connect_string = Dbi:Pg:dbname=mails_plannings;user=manitou
 

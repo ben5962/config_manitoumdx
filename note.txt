@@ -1,0 +1,6 @@
+cnx via manitou-mail
+ip 127.0.0.1 (c'était l'astuce: virtualbox se relie au loopback si fw de port)
+port rien à faire (sinon 5432)
+db mails_plannings
+login: manitou
+mdp: manitou

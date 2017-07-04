@@ -27,10 +27,10 @@ Vagrant.configure("2") do |config|
 	#config.vm.provision :shell, inline: "moui moui"
 	#config.vm.provision "shell", inline: $script
 
-	#config.vm.provider "virtualbox" do |v|
-	#	v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-	#	v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-	#end
+	config.vm.provider "virtualbox" do |v|
+		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+		v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
+	end
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -47,10 +47,13 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
   # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
+  config.vm.network :forwarded_port, guest: 5432, host: 5432
+  #config.vm.network :forwarded_port, guest: 22, host: 2222
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.network :private_network, ip: "10.0.0.1"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
